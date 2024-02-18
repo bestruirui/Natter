@@ -67,4 +67,4 @@ jobs:
         body: TODO New Release.
         draft: false
         prerelease: false
-        files: /dist/*
+        files: /dist/**

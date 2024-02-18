@@ -57,7 +57,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/download-artifact@v2
         with:
-          path: /dist/
+          path: dist/
       - name: Create Release and Upload Release Asset
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -67,4 +67,4 @@ jobs:
           body: TODO New Release.
           draft: false
           prerelease: false
-          files: /dist/**
+          files: dist/**

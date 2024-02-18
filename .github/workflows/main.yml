@@ -26,7 +26,7 @@ jobs:
           name: windows-executables
           path: |
             dist/natter_windows_x64.exe
-            dist/natter_check_windows_x64-check.exe
+            dist/natter_check_windows_x64.exe
 
   build-linux:
     runs-on: ubuntu-latest

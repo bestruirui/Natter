@@ -64,7 +64,6 @@ jobs:
         with:
           tag_name: ${{ github.ref_name }}
           name: Release ${{ github.ref_name }}
-          body: TODO New Release.
           draft: false
           prerelease: false
           files: dist/**

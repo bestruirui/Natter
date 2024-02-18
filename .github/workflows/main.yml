@@ -17,16 +17,16 @@ jobs:
       - name: Install PyInstaller
         run: pip install pyinstaller
       - name: Build Executable (natter)
-        run: pyinstaller --onefile natter.py
+        run: pyinstaller --onefile natter.py --name natter_windows_x64.exe
       - name: Build Executable (natter-check)
-        run: pyinstaller --onefile natter-check.py
+        run: pyinstaller --onefile natter-check.py --name natter_check_windows_x64.exe
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2
         with:
           name: windows-executables
           path: |
-            dist/natter.exe
-            dist/natter-check.exe
+            dist/natter_windows_x64.exe
+            dist/natter_check_windows_x64-check.exe
 
   build-linux:
     runs-on: ubuntu-latest
@@ -39,16 +39,16 @@ jobs:
       - name: Install PyInstaller
         run: pip install pyinstaller
       - name: Build Executable (natter)
-        run: pyinstaller --onefile natter.py
+        run: pyinstaller --onefile natter.py --name natter_linux_x64
       - name: Build Executable (natter-check)
-        run: pyinstaller --onefile natter-check.py
+        run: pyinstaller --onefile natter-check.py --name natter_check_linux_x64
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2
         with:
           name: linux-executables
           path: |
-            dist/natter
-            dist/natter-check
+            dist/natter_linux_x64
+            dist/natter_check_linux_x64
 
   release:
     needs: [build-windows, build-linux]

@@ -59,12 +59,12 @@ jobs:
         with:
           path: /dist/
       - name: Create Release and Upload Release Asset
-      uses: softprops/action-gh-release@v1
-      if: startsWith(github.ref, 'refs/tags/')
-      with:
-        tag_name: ${{ github.ref_name }}
-        name: Release ${{ github.ref_name }}
-        body: TODO New Release.
-        draft: false
-        prerelease: false
-        files: /dist/**
+      - uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          body: TODO New Release.
+          draft: false
+          prerelease: false
+          files: /dist/**
